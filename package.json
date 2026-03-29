@@ -4,6 +4,9 @@
   "description": "Extract design tokens from any production website + Storybook UI kit",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "extract": "node extract.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

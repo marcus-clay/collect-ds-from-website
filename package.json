@@ -1,0 +1,19 @@
+{
+  "name": "collect-ds-from-website",
+  "version": "1.0.0",
+  "description": "Extract design tokens and UI components from any production website",
+  "main": "extract.js",
+  "type": "module",
+  "scripts": {
+    "extract": "node extract.js"
+  },
+  "dependencies": {
+    "playwright": "^1.43.0",
+    "postcss": "^8.4.38",
+    "postcss-scss": "^4.0.9",
+    "tinycolor2": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

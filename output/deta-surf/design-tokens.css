@@ -1,0 +1,265 @@
+/* ============================================================
+   Design Tokens — deta.surf
+   Source  : https://deta.surf/
+   Extracted: 2026-03-29
+   Tool    : collect-ds-from-website
+   ============================================================ */
+
+/* ── Font Faces ──────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/Switzer-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gambarino';
+  src: url('/fonts/Gambarino-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tanker';
+  src: url('/fonts/Tanker-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── CSS Custom Properties ───────────────────────────────────── */
+:root {
+
+  /* ── Colors ── */
+  --color-brand-dark:           #1a2a3a;   /* Primary navy — headings */
+  --color-brand-mid:            #3a5a7a;   /* Mid blue — gradient end */
+  --color-accent-bright:        #0097fe;   /* Bright blue — CTA, links */
+  --color-accent-blue:          #0080e5;   /* CTA gradient end */
+  --color-interactive-start:    #0396df;   /* Card selected gradient start */
+  --color-interactive-end:      #0282e8;   /* Card selected gradient end */
+  --color-interactive-hover:    #006ec7;   /* Hover blue */
+  --color-interactive-hover-alt:#006dc8;   /* Hover blue alt */
+  --color-border:               #28476110; /* Subtle border (6% opacity) */
+  --color-border-hover:         #28476140; /* Border hover (25% opacity) */
+  --color-shadow-navy:          #1c405c40; /* Shadow tint */
+  --color-stroke-light:         #d1d7fe;   /* Lavender stroke / SVG */
+  --color-overlay-dark:         #0000001a; /* 10% black overlay */
+  --color-overlay-light:        #ffffffe6; /* 90% white overlay */
+  --color-white:                #ffffff;
+  --color-black:                #000000;
+
+  /* ── Gradients ── */
+  --gradient-heading:      linear-gradient(135deg, #1a2a3a, #3a5a7a);
+  --gradient-heading-muted:linear-gradient(135deg, #1a2a3a99, #3a5a7a99);
+  --gradient-cta:          linear-gradient(180deg, #0097fe, #0080e5);
+  --gradient-card-selected:linear-gradient(180deg, #0396df, #0282e8);
+
+  /* ── Typography — Font Families ── */
+  --font-switzer:   'Switzer', sans-serif;
+  --font-gambarino: 'Gambarino', serif;
+  --font-tanker:    'Tanker', sans-serif;
+  --font-base:      var(--font-switzer); /* default */
+
+  /* ── Typography — Font Sizes ── */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-md:   1.125rem;   /* 18px */
+  --text-lg:   1.25rem;    /* 20px */
+  --text-xl:   1.5rem;     /* 24px */
+  --text-2xl:  1.875rem;   /* 30px */
+  --text-3xl:  2.25rem;    /* 36px */
+  --text-4xl:  3rem;       /* 48px */
+  --text-5xl:  3.75rem;    /* 60px */
+
+  /* ── Typography — Font Weights ── */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ── Typography — Line Heights ── */
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+
+  /* ── Spacing (4px base grid) ── */
+  --space-0:  0px;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Border Radius ── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Fluid Border Widths (responsive via clamp) ── */
+  --border-fluid:    clamp(0.7px, 0.27vw, 3.6px);
+  --border-fluid-xs: clamp(1.8px, 0.18vw, 2.4px);
+  --inset-depth:     clamp(3.6px, 0.36vw, 4.8px);
+
+  /* ── Shadows ── */
+  --shadow-card:        0 calc(-1 * var(--inset-depth)) 0 0 var(--color-border) inset;
+  --shadow-card-hover:  0 calc(-1 * var(--inset-depth)) 0 0 var(--color-border-hover) inset;
+  --shadow-card-active: 0 calc(-1 * var(--inset-depth)) 0 0 var(--color-interactive-end) inset;
+
+  /* ── Transitions ── */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast:    0.15s var(--ease-default);
+  --transition-default: 0.2s  var(--ease-default);
+  --transition-slow:    0.3s  var(--ease-default);
+
+  /* ── Z-Index Scale ── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   200;
+
+  /* ── Breakpoints (reference only — use in @media) ── */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+}
+
+/* ============================================================
+   Global Reset — matching deta.surf base styles
+   ============================================================ */
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+img {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+
+/* ── Gradient Text ── */
+.text-gradient {
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-muted {
+  background: var(--gradient-heading-muted);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--gradient-cta);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-base);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter var(--transition-default), transform var(--transition-default);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+/* ── Feature Cards ── */
+.feature-card {
+  outline: var(--border-fluid) solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition:
+    outline-color var(--transition-default),
+    box-shadow var(--transition-default),
+    transform var(--transition-default),
+    background var(--transition-default);
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  outline-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+.feature-card:active {
+  transform: translateY(2px);
+  box-shadow: var(--shadow-card-active);
+}
+
+.feature-card.is-selected {
+  background: var(--gradient-card-selected);
+  color: var(--color-white);
+  outline-color: transparent;
+}
+
+/* ── Navigation Dots ── */
+.nav-dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-overlay-dark);
+  transition: opacity var(--transition-default), background var(--transition-default);
+  cursor: pointer;
+}
+
+.nav-dot.is-active {
+  background: var(--color-black);
+  opacity: 0.4;
+}
+
+/* ── Overlay ── */
+.overlay {
+  background: var(--color-overlay-dark);
+  backdrop-filter: blur(4px);
+}
